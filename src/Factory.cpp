@@ -95,7 +95,9 @@ int pretendMain() {
 	// Now, can create objects indirectly
 	Factory factory;
 	ChildType childtype = ChildType1;
+
 	Parent* child = factory.MakeChild(childtype);
+	delete child;
 
 	return 0;
 }

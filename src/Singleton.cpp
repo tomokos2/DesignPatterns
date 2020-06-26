@@ -15,6 +15,8 @@ public:
 	// Disable the copy constructor
 	Singleton(const Singleton&) = delete;
 
+	~Singleton() { delete s_instance_; };
+
 	static Singleton* Get() {
 
 		if (s_instance_ == nullptr) {
@@ -58,7 +60,6 @@ int PretendMain() {
 
 	// See how putting get in the function makes the call less verbose?
 	int my_num2 = Singleton::ConciseFunction();
-
 
 	return 0;
 }

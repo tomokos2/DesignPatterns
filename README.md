@@ -4,3 +4,4 @@ Use as reference for application in future projects
 
 - Singleton
 - Factory
+- Observer
