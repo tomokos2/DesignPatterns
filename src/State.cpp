@@ -11,7 +11,19 @@ Parts: ConcreteState - Each subclass implements a behavior associated with a sta
 Type: Behavioral
 */
 
-class State;
+class Context;
+
+class State {
+
+public:
+	virtual void DoSomething(Context* c) {};
+	virtual void DoThat(Context* c) {};
+	virtual void DoAnother(Context* c) {};
+	virtual void DoIt(Context* c) {};
+
+protected:
+	void ChangeState(Context* c, State* s);
+};
 
 class Context {
 public:
@@ -46,21 +58,11 @@ private:
 
 };
 
+void State::ChangeState(Context* c, State* s) {
 
-class State {
-	
-public:
-	virtual void DoSomething(Context* c);
-	virtual void DoThat(Context* c);
-	virtual void DoAnother(Context* c);
-	virtual void DoIt(Context* c);
+	c->ChangeState(s);
+}
 
-protected:
-	void ChangeState(Context* c, State* s) {
-
-		c->ChangeState(s);
-	}
-};
 
 class StateSubclass1 : public State {
 public:
@@ -69,11 +71,7 @@ public:
 		// Do something
 	}
 
-	void DoIt(Context* c) {
-		// Do it in this unique way too
-		// Doing it could cause a state change
-		ChangeState(c, new StateSubclass3);
-	}
+	void DoIt(Context* c);
 };
 
 class StateSubclass2 : public State {
@@ -82,7 +80,7 @@ public:
 
 	void DoThat(Context* c) {
 		// Do that
-		ChangeState(c, new StateSubclass1);
+		ChangeState(c, new StateSubclass1());
 	}
 };
 
@@ -95,6 +93,13 @@ public:
 	}
 	void DoIt(Context* c) {
 		// Do it
-		ChangeState(c, new StateSubclass2);
+		ChangeState(c, new StateSubclass2());
 	}
 };
+
+void StateSubclass1::DoIt(Context* c) {
+	// Do it in this unique way too
+	// Doing it could cause a state change
+	ChangeState(c, new StateSubclass3());
+
+}

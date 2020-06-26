@@ -10,6 +10,8 @@ Purpose: One-to-many dependency between objects, where when one subscriber objec
 Type: Behavioral
 */
 
+class Publisher;
+
 class Subscriber {
 public:
 	virtual ~Subscriber();
