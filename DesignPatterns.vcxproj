@@ -124,10 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="app\Main.cpp" />
+    <ClCompile Include="src\Adapter.cpp" />
     <ClCompile Include="src\Factory.cpp" />
     <ClCompile Include="src\Observer.cpp" />
     <ClCompile Include="src\Singleton.cpp" />
     <ClCompile Include="src\State.cpp" />
+    <ClCompile Include="src\Strategy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

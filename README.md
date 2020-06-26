@@ -6,3 +6,5 @@ Use as reference for application in future projects
 - Factory
 - Observer
 - State
+- Adapter
+- Strategy
