@@ -5,6 +5,7 @@
     <ClCompile Include="src\Factory.cpp" />
     <ClCompile Include="app\Main.cpp" />
     <ClCompile Include="src\Observer.cpp" />
+    <ClCompile Include="src\State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

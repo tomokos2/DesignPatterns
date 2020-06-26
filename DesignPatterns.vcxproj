@@ -127,6 +127,7 @@
     <ClCompile Include="src\Factory.cpp" />
     <ClCompile Include="src\Observer.cpp" />
     <ClCompile Include="src\Singleton.cpp" />
+    <ClCompile Include="src\State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
