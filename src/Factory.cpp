@@ -14,12 +14,15 @@ enum ChildType {
 	ChildType1, ChildType2, ChildType3
 };
 
-class Parent {
+
+class Factory {
 public:
-	virtual void Function() = 0;
-	static Parent* MakeChild(ChildType& type) {
+	Factory() {};
+
+	virtual Parent* MakeChild(ChildType& type) {
 
 		switch (type) {
+
 		case ChildType1:
 			return new Child1;
 
@@ -30,9 +33,39 @@ public:
 			return new Child3;
 
 		default:
-			// Error
+			return new Child1;
 		}
 	}
+};
+
+// By keepign the factory separate, can have different implementations on how to deliver the children
+// This example mixes them up
+class AnotherFactory {
+	 Parent* MakeChild(ChildType& type) {
+
+		switch (type) {
+
+		case ChildType1:
+			return new Child3;
+
+		case ChildType2:
+			return new Child2;
+
+		case ChildType3:
+			return new Child1;
+
+		default:
+			return new Child3;
+		}
+	}
+};
+
+
+
+class Parent {
+public:
+	virtual void Function() = 0;
+
 };
 
 class Child1 : public Parent {
@@ -58,6 +91,11 @@ public:
 };
 
 int pretendMain() {
+	
+	// Now, can create objects indirectly
+	Factory factory;
+	ChildType childtype = ChildType1;
+	Parent* child = factory.MakeChild(childtype);
 
 	return 0;
 }
