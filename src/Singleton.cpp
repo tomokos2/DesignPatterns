@@ -2,6 +2,7 @@
 Purpose: Eliminate the option of instantiating more than one object
 				 More organized than a namespace
 				 Be careful of thread safety: https://www.codeproject.com/Articles/96942/Singleton-Design-Pattern-and-Thread-Safety
+Type: Creational
 */
 
 class Singleton {

@@ -3,7 +3,7 @@
   <ItemGroup>
     <ClCompile Include="src\Singleton.cpp" />
     <ClCompile Include="src\Factory.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="app\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
