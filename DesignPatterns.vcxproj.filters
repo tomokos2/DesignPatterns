@@ -8,6 +8,7 @@
     <ClCompile Include="src\State.cpp" />
     <ClCompile Include="src\Adapter.cpp" />
     <ClCompile Include="src\Strategy.cpp" />
+    <ClCompile Include="src\Builder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

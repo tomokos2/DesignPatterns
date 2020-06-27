@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="app\Main.cpp" />
     <ClCompile Include="src\Adapter.cpp" />
+    <ClCompile Include="src\Builder.cpp" />
     <ClCompile Include="src\Factory.cpp" />
     <ClCompile Include="src\Observer.cpp" />
     <ClCompile Include="src\Singleton.cpp" />
